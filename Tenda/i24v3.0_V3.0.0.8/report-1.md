@@ -3,9 +3,7 @@
 ## Overview
 Product: Tenda i24v3.0 V3.0.0.8(4008)
 
-Hardware Version: V3.0.0.8(4008)
-
-Software Version: V3.0.0.8(4008)
+Version: V3.0.0.8(4008)
 
 Manufacturer's website information: https://www.tendacn.com/
 

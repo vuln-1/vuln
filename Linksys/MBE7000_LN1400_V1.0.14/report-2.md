@@ -118,7 +118,7 @@ value is not constrained to a UUID.
 - NVD keyword searches on 2026-11-08 for `UploadSysinfoData`,
   `pub_upload_sysinfo`, `nodes_diagnostics command injection` and
   `MBE7000 command injection` returned zero results. Candidate 0-day;
-  no CVE assigned and no vendor contact has been made.
+  CVE application in progress.
 
 ## Additional Information
 
@@ -134,6 +134,9 @@ MBE7000 1.0.14.216607, LN1400 1.0.14.216698
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The JNAP UploadSysinfoData action passes uploadRequestUUID into pub_upload_sysinfo %s and executes it with os.execute without validation.

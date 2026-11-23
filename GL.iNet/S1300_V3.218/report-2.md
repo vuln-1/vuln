@@ -111,8 +111,7 @@ primitive, which was not demonstrated.
   overflow` and `GL-S1300` returned no matching CVE on 2026-11-08.
   CVE-2023-31475 is a different `guci2_get` buffer overflow in
   `libglutil.so`; CVE-2023-31478 is a Wi-Fi configuration information
-  leak. Candidate 0-day; no CVE assigned and no vendor contact has been
-  made.
+  leak. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -128,6 +127,9 @@ S1300 (QSDK, ARM32)
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 POST /api/repeater/join copies key, identity, password, mac, channel, caps, device and dongle into fixed-size stack buffers with unbounded strcpy. Long values overflow the stack and abort the handler.

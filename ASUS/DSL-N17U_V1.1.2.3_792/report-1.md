@@ -195,8 +195,7 @@ exact release that ASUS published as the fix for CVE-2024-3912
   DSL-AC51, DSL-N16 and DSL-AC750, not DSL-N17U.
 - NVD keyword searches on 2026-11-08 for `DSL-N17U`, `boa .asp path
   info authentication bypass`, and the `WOL_Invoke`/`destMac` strings
-  returned no matching entry. Candidate 0-day; no CVE assigned and no
-  vendor contact has been made.
+  returned no matching entry. Candidate 0-day; CVE application in progress.
 
 ## Debug output
 
@@ -255,6 +254,9 @@ DSL-N17U DSL router
 
 ### Vulnerability Class
 CWE-306/CWE-288 authentication bypass and CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 ASUS DSL-N17U 1.1.2.3_792 decides whether an ASP page is login-exempt with strstr on the request path. Appending path info such as /x.js to a protected page bypasses authentication, and the WOL_Invoke ASP builtin passes the destMac parameter to system("ether-wake -i br0 %s"). An unauthenticated attacker can execute commands as root.

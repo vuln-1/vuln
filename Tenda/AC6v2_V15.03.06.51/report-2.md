@@ -98,8 +98,7 @@ the injected command runs in the same shell context as `doSystemCmd`.
 ## Status and disclosure
 
 Static confirmation (decompilation; handler and registration unchanged).
-Dynamic pending. Candidate new CVE — new affected version (AC6 v2.0 V15.03.06.51) of the public formWriteFacMac pattern; no CVE assigned. No vendor or
-CNA contact.
+Dynamic pending. Candidate new CVE — new affected version (AC6 v2.0 V15.03.06.51) of the public formWriteFacMac pattern; CVE application in progress.
 
 ## Additional Information
 
@@ -118,6 +117,9 @@ CWE-78 command injection
 
 ### CVE_candidate_type
 new affected version (AC6 v2.0 V15.03.06.51) of the public formWriteFacMac pattern — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formWriteFacMac passes the mac POST parameter directly to doSystemCmd without MAC-format or character validation.

@@ -97,8 +97,7 @@ into the configuration structure.
 - Add a stack canary and compile `webs` with `-fstack-protector`.
 - NVD keyword searches on 2026-11-08 for `net_WebIPCLIENTGetValue`,
   `ipTemp Moxa`, `Moxa TN-5916 buffer overflow` and the field names
-  returned zero results. Candidate 0-day; no CVE assigned and no vendor
-  contact has been made.
+  returned zero results. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -114,6 +113,9 @@ v3.2 and v3.3
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 wan.asp sends WAN/IP-client settings to /goform/net_WebIPCLIENTGetValue. The handler strcpy's seven user-controlled strings into a 300-byte stack structure without checking slot boundaries.

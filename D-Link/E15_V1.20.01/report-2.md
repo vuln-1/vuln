@@ -124,8 +124,7 @@ required.
   `/etc/emDaemon/passwd`, E15/M32/R15/R32, published 2026-10-19),
   which is a different component and issue class. No entry describes
   this Login NULL dereference.
-- Candidate 0-day; no CVE assigned and no vendor contact has been
-  made.
+- Candidate 0-day; CVE application in progress.
 
 ## Verification
 
@@ -145,6 +144,9 @@ E15 AX1800 Mesh Range Extender
 
 ### Vulnerability Class
 CWE-476 NULL pointer dereference (denial of service)
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The /DHMAPI/ Login handler stores the XML Action value and calls strcmp without a NULL check. A <Login/> element with no Action crashes the main httpd process, denying access to the management UI. The request needs no API-AUTH header and no cookie.

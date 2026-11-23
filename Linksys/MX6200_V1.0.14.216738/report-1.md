@@ -145,7 +145,7 @@ management exposure depends on the device's remote-UI setting.
   different Linksys JNAP shell injection (MR9600
   `BTRequestGetSmartConnectStatus` `pin` argument in
   `run_central2.sh`); it does not cover this action or model.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -161,6 +161,9 @@ MX6200 1.0.14.216738, MBE7000 1.0.14.216607, LN1400 1.0.14.216698
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The JNAP StopBlinkingNodeLed action passes delayTimer into /etc/init.d/run_identify_node_led.sh stop %s and executes it with os.execute; the value is not validated.

@@ -31,6 +31,9 @@ V16.01.15.5
 ### Vulnerability Class
 CWE-798 Use of Hard-coded Credentials
 
+### CVE_status
+CVE application in progress
+
 ### Description
 Tenda G0-5G-8G-PoEV3.0si V16.01.15.5 ships a hardcoded root password in /etc_ro/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
 

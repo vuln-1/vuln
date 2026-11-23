@@ -89,8 +89,7 @@ the JSONP response and the victim's session.
 
 NVD/OSV keyword queries found no AX3 `getRebootStatus` callback XSS;
 CVE-2021-44148 is a GL.iNet XSS and CVE-2025-63834 is a Tenda AC18
-stored XSS, both different products/handlers. Candidate 0-day; no CVE
-assigned and no vendor contact has been made.
+stored XSS, both different products/handlers. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -106,6 +105,9 @@ V16.03.12.11
 
 ### Vulnerability Class
 CWE-79 cross-site scripting
+
+### CVE_status
+CVE application in progress
 
 ### Description
 R7WebsSecurityHandler exempts /goform/getRebootStatus from the login check, and the handler reflects callback into the response without sanitization, allowing unauthenticated cross-site scripting.

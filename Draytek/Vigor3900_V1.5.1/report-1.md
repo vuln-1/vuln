@@ -143,7 +143,7 @@ omitted.
 - NVD keyword searches on 2026-11-08 for `apmcfgupload`,
   `cvmcfgupload`, `mainfunction.cgi filename command injection` and
   `Draytek Vigor3900 upload` returned zero results. Candidate 0-day;
-  no CVE assigned and no vendor contact has been made.
+  CVE application in progress.
 
 ## Additional Information
 
@@ -159,6 +159,9 @@ Vigor3900 router
 
 ### Vulnerability Class
 CWE-78 command injection / CWE-306 missing authentication
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The /apmcfgupload and /cvmcfgupload paths reach sub_13450 without a valid session. The uploaded filename is interpolated into mkdir -p .../%s and executed through system(). cgiEscape does not escape single quotes, so an unauthenticated attacker can run commands.

@@ -91,7 +91,7 @@ side effects.
 ## Status and disclosure
 
 Dynamic confirmation (qemu-user; RRQ and WRQ transcripts). Candidate
-0-day; no CVE assigned. No vendor/CNA contact.
+0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -107,6 +107,9 @@ V3.3.0-250113 / V56.1.1.11
 
 ### Vulnerability Class
 CWE-306 missing authentication / CWE-732 / CWE-434 / CWE-22
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The default inetd.conf starts /bin/tftpd as root on UDP 69 without authentication, allowing arbitrary file read and write.

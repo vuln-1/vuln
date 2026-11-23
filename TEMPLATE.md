@@ -59,6 +59,9 @@
 ### CVE_candidate_type
 New vulnerability | incomplete-fix variant of CVE-XXXX | new affected model/version — candidate new CVE
 
+### CVE_status
+CVE application in progress
+
 ### Description
 <plain-text summary, no markup, maximum 9000 characters>
 

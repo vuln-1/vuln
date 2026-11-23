@@ -101,8 +101,7 @@ commands.
 - NVD keyword searches for `Linksys E9450 authMac`,
   `cgiSelectChildNodeForPairing`, `disAuthMacChildNode` and
   `Linksys E9450 command injection` returned zero results on
-  2026-11-08. Candidate 0-day; no CVE assigned and no vendor contact has
-  been made.
+  2026-11-08. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -118,6 +117,9 @@ E9450-SG
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The mesh-pairing CGI passes the mac parameter through cgiGetValueByNameSafe without filtering into authMac.sh %s and disauthMac.sh %s, which are executed by rut_doSystemAction.

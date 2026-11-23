@@ -31,6 +31,9 @@ V04.05.01.15
 ### Vulnerability Class
 CWE-798 Use of Hard-coded Credentials
 
+### CVE_status
+CVE application in progress
+
 ### Description
 Tenda 4G05V1.0re V04.05.01.15 ships a hardcoded root password in /etc/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
 

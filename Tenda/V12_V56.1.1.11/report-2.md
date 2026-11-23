@@ -70,7 +70,7 @@ Authenticated admin or CSRF root command execution.
 ## Status and disclosure
 
 Dynamic confirmation (FirmAE; handler unchanged; CSRF verified). Candidate
-0-day; no CVE assigned. No vendor/CNA contact.
+0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -86,6 +86,9 @@ V56.1.1.11
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formPingV6 concatenates pingV6Addr into a ping6 command passed to /bin/sh without validation; ;, backticks and $() are accepted.

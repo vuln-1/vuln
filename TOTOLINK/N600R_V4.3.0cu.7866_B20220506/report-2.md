@@ -77,7 +77,7 @@ can be created by an unauthenticated path, the issue becomes pre-auth.
 ## Status and disclosure
 
 Dynamic confirmation (qemu-user; handler unchanged; test-only auth marker).
-Candidate new CVE — incomplete-fix variant of CVE-2022-28908; no CVE assigned. No vendor/CNA contact.
+Candidate new CVE — incomplete-fix variant of CVE-2022-28908; CVE application in progress.
 
 ## Additional Information
 
@@ -96,6 +96,9 @@ CWE-78 command injection / CWE-184 incomplete deny-list
 
 ### CVE_candidate_type
 incomplete-fix variant of CVE-2022-28908 — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 setDiagnosisCfg passes ipDoamin into sprintf("ping %s ...") and system(). The Validity_check deny-list does not reject newline, so a value such as 127.0.0.1\necho PWNED > /tmp/pwned breaks out of the ping command.

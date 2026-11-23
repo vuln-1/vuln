@@ -112,7 +112,7 @@ lack of canary/stack-protector need to be checked in the target build.
 ## Status and disclosure
 
 Static confirmation (decompilation; handler unchanged). Dynamic pending.
-Candidate new CVE — new affected version (AC6 v2.0 V15.03.06.51) of the public AC6 V1.0 security overflow; no CVE assigned. No vendor/CNA contact.
+Candidate new CVE — new affected version (AC6 v2.0 V15.03.06.51) of the public AC6 V1.0 security overflow; CVE application in progress.
 
 ## Additional Information
 
@@ -131,6 +131,9 @@ CWE-121 stack buffer overflow
 
 ### CVE_candidate_type
 new affected version (AC6 v2.0 V15.03.06.51) of the public AC6 V1.0 security overflow — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formWifiBasicSet reads the security POST parameter and strcpy's it into a 256-byte stack buffer; security_5g and param_5g follow the same pattern.

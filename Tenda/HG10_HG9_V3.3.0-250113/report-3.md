@@ -106,7 +106,7 @@ admin-authenticated; this report does not merge the two paths.
 ## Status and disclosure
 
 Dynamic confirmation (qemu-user + FirmAE full-system; handler unchanged).
-Candidate 0-day; no CVE assigned. No vendor/CNA contact.
+Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -122,6 +122,9 @@ V3.3.0-250113
 
 ### Vulnerability Class
 CWE-78 command injection / CWE-134 format string
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formUploadConfig reads the multipart product_key into a 64-byte buffer and passes it to td_AL_external_interface, which only checks strlen < 0x18 before concatenating it into shell commands.

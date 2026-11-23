@@ -94,7 +94,7 @@ backdoor surface on production firmware.
 ## Status and disclosure
 
 Static confirmation (handler and registration unchanged). Dynamic pending.
-Candidate new CVE — new affected model (FH1201) for the public formexeCommand pattern; no CVE assigned. No vendor/CNA contact.
+Candidate new CVE — new affected model (FH1201) for the public formexeCommand pattern; CVE application in progress.
 
 ## Additional Information
 
@@ -113,6 +113,9 @@ CWE-78 command injection / CWE-912 hidden functionality
 
 ### CVE_candidate_type
 new affected model (FH1201) for the public formexeCommand pattern — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The hidden formexeCommand handler passes cmdinput to doSystemCmd, including a direct doSystemCmd("%s", v7), giving command execution.

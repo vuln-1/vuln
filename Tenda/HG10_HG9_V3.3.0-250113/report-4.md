@@ -94,7 +94,7 @@ inside the loop body and does not require a valid LOID.
 ## Status and disclosure
 
 Dynamic confirmation (FirmAE, auth-bypass test image; handler/system
-unchanged). Candidate 0-day; no CVE assigned. No vendor/CNA contact.
+unchanged). Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -110,6 +110,9 @@ V3.3.0-250113
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formeponConf places fmepon_loid and fmepon_loid_password inside a double-quoted oamcli command without escaping, allowing command injection.

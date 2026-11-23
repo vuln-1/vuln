@@ -82,7 +82,7 @@ bypassed; RCE not demonstrated.
 ## Status and disclosure
 
 Dynamic confirmation (no Cookie, firmware lighttpd + client.cgi). Candidate
-0-day; no CVE assigned. No vendor/CNA contact.
+0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -98,6 +98,9 @@ Unleashed AP T750SE (image also used by T750/R750/R850/R650/R550)
 
 ### Vulnerability Class
 CWE-306 missing authentication / CWE-434 unrestricted upload
+
+### CVE_status
+CVE application in progress
 
 ### Description
 client.cgi parses /upload/fw and /upload/cert multipart bodies and writes them to /tmp/apimage/rcks_fw.bl7 and /tmp/cert-pkt-file before webad and session validation, with no authentication, size limit or file type check.

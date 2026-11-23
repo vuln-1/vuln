@@ -90,7 +90,7 @@ Authenticated admin (or CSRF) root command execution.
 ## Status and disclosure
 
 Static confirmation (handler and registration unchanged). Dynamic pending.
-Candidate new CVE — new affected model (FH1201) for the public formWriteFacMac pattern; no CVE assigned. No vendor/CNA contact.
+Candidate new CVE — new affected model (FH1201) for the public formWriteFacMac pattern; CVE application in progress.
 
 ## Additional Information
 
@@ -109,6 +109,9 @@ CWE-78 command injection
 
 ### CVE_candidate_type
 new affected model (FH1201) for the public formWriteFacMac pattern — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formWriteFacMac passes the mac POST parameter to doSystemCmd("cfm mac %s") without validation.

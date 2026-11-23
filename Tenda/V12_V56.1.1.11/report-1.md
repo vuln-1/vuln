@@ -84,7 +84,7 @@ Authenticated admin or CSRF root command execution and persistence.
 
 ## Status and disclosure
 
-Dynamic confirmation in V12 (handler unchanged; CSRF verified). Candidate new CVE — new affected model (Tenda V12) for formImportOMCIShell; no CVE assigned. No vendor/CNA contact.
+Dynamic confirmation in V12 (handler unchanged; CSRF verified). Candidate new CVE — new affected model (Tenda V12) for formImportOMCIShell; CVE application in progress.
 
 ## Additional Information
 
@@ -103,6 +103,9 @@ CWE-434 unrestricted upload / CWE-78 command execution
 
 ### CVE_candidate_type
 new affected model (Tenda V12) for formImportOMCIShell — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formImportOMCIShell writes the multipart body to /tmp/omcishell and runs /bin/sh /tmp/omcishell as root without file-type or content validation.

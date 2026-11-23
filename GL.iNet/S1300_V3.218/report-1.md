@@ -97,8 +97,7 @@ memory-corruption/DoS path with a very long `ifname`.
 - NVD keyword searches for `GL.iNet channel_optimize`,
   `iwpriv acsreport`, and `GL.iNet ifname command injection` returned
   zero results on 2026-11-08. The separate firewall `dest_port` issue is
-  CVE-2026-19982 (known, different handler). Candidate 0-day; no CVE
-  assigned and no vendor contact has been made.
+  CVE-2026-19982 (known, different handler). Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -114,6 +113,9 @@ S1300 (QSDK, ARM32)
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 POST /api/ap/channel_optimize passes the ifname field to libglutil's sprintf("iwpriv %s acsreport 1") followed by system(); ifname is not validated or quoted.

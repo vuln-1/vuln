@@ -79,7 +79,7 @@ login.
   on the client.
 - NVD/OSV queries found no AX3 `R7WebsSecurityHandler` `password`
   overflow; CVE-2026-36778 is a different Tenda O3 `username` issue.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -95,6 +95,9 @@ V16.03.12.11
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 R7WebsSecurityHandler's /login/Auth path copies the password into a fixed stack buffer without a length check, overflowing the stack.

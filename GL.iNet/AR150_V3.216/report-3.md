@@ -121,7 +121,7 @@ escaped.
   `ReleaseNote.txt` and `GL.iNet onlinecheck` returned zero results on
   2026-11-08. CVE-2023-31474/31471 are package-install injection issues;
   CVE-2024-39226/39228 are different s2s/OVPN shell injections.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -137,6 +137,9 @@ AR150 3.216, SF1200 3.218, S1300 3.218, USB150 3.218
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 POST /api/firmware/upgrade_url/set stores upgrade_url in UCI glconfig.autoupdate.firmware_path without validation. The stored value is later used in a shell command, allowing an authenticated attacker to execute commands.

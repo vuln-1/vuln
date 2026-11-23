@@ -69,7 +69,7 @@ stack layout/gadget is found.
 ## Status and disclosure
 
 Dynamic confirmation of the crash/DoS (FirmAE; handler unchanged). RCE not
-proven. Candidate new CVE — new affected model (Tenda V12) for formWlanSetup; no CVE assigned. No vendor/CNA contact.
+proven. Candidate new CVE — new affected model (Tenda V12) for formWlanSetup; CVE application in progress.
 
 ## Additional Information
 
@@ -88,6 +88,9 @@ CWE-121 stack buffer overflow
 
 ### CVE_candidate_type
 new affected model (Tenda V12) for formWlanSetup — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formWlanSetup strcpy's the ssid parameter into a 231-byte stack buffer with no length check.

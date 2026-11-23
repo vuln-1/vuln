@@ -185,8 +185,7 @@ unauthenticated Login NULL-dereference DoS on the same firmware.
   CVE-2026-112146 (hard-coded MQTT broker credentials in
   `/etc/emDaemon/passwd`), a different component and issue class.
 - No entry for this `SetTimeSettings`/`NTPServer` command injection on
-  the E15 was found. Candidate 0-day; no CVE assigned and no vendor
-  contact has been made.
+  the E15 was found. Candidate 0-day; CVE application in progress.
 
 ## Verification
 
@@ -206,6 +205,9 @@ E15 AX1800 Mesh Range Extender
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The SetTimeSettings DHMAPI action stores the NTPServer field verbatim in csman object 0x70010. commander reads that object and executes syncdateNTP.sh "%s" through _exec_cmd, pox_system and system(), so a crafted NTPServer value executes shell commands. Factory units have an empty administrator password, making the action reachable without prior credentials.

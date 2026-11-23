@@ -86,7 +86,7 @@ sessions are normally administrator-level.
 - NVD keyword searches for `Moxa l2Temp`, `net_WebL2FilterGetValue` and
   `TN-5916 L2 filter` returned zero matching CVEs on 2026-11-08. This is
   a different handler from the `pingTemp`, SMTP and `iptTemp` reports.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -102,6 +102,9 @@ v3.2 and v3.3
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 layer2_filter.asp submits a +-separated table as l2Temp; websGetVar returns it and the handler overflows fixed stack buffers.

@@ -108,8 +108,7 @@ on ECW336 the 224-byte buffer gives a smaller corruption/DoS.
 - Reject requests whose path segments exceed the fixed component size.
 - NVD/OSV keyword searches for `EnGenius api.fcgi`,
   `senao-openapi-server`, `ECW336` and `EWS377AP` URI `sscanf` returned
-  no matching CVE on 2026-11-08. Candidate 0-day; no CVE assigned and no
-  vendor contact has been made.
+  no matching CVE on 2026-11-08. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -125,6 +124,9 @@ ECW336 1.6.71, EWS377AP v3 3.9.3.2, EWS276-FIT 1.0.45
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The /api request URI is parsed with sscanf into a fixed stack buffer in api.fcgi; a long URI overflows the buffer before authentication.

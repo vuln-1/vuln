@@ -104,7 +104,7 @@ practical impact is high.
 - NVD keyword searches for `Moxa smtpGetValue`, `net_WebSMTPGetValue`
   and `TN-5916 SMTP` returned zero matching CVEs on 2026-11-08. The
   existing `pingTemp` report is a different handler and stack frame.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -120,6 +120,9 @@ v3.2 and v3.3
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 emalert.asp submits SMTP settings; smtpGetValue copies the user-controlled fields into fixed stack buffers, overflowing the web server stack.

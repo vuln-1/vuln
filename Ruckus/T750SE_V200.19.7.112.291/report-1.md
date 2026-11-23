@@ -81,7 +81,7 @@ if the affected page returns 200 instead of the observed 302.
 ## Status and disclosure
 
 Dynamic confirmation (firmware lighttpd + client.cgi + webad). Candidate
-0-day; no CVE assigned. No vendor/CNA contact.
+0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -97,6 +97,9 @@ Unleashed AP T750SE (image also used by T750/R750/R850/R650/R550)
 
 ### Vulnerability Class
 CWE-113 CRLF response-header injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 client.cgi decodes the Cookie with curl_easy_unescape and webad reflects it into Set-Cookie. A Cookie containing %0d%0a injects response headers; a double CRLF injects response body content. GET /client.cgi?uri=sysInfo is reachable without a session.

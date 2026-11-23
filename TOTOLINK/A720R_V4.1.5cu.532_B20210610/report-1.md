@@ -83,7 +83,7 @@ Unauthenticated root code execution and persistence.
 ## Status and disclosure
 
 Dynamic confirmation (qemu-mipsel HTTP end-to-end). Candidate 0-day/new
-affected product; no CVE assigned. No vendor/CNA contact.
+affected product; CVE application in progress.
 
 ## Additional Information
 
@@ -99,6 +99,9 @@ V4.1.5cu.532_B20210610
 
 ### Vulnerability Class
 CWE-306 missing authentication / CWE-434 unrestricted upload / CWE-78 command execution
+
+### CVE_status
+CVE application in progress
 
 ### Description
 cstecgi.cgi performs no token or cookie verification. UploadCustomModule base64-decodes File, accepts a caller-supplied FileMd5, writes /var/custom.cgi with mode 0777, and the /web_cste/cgi-bin/custom.cgi symlink executes it.

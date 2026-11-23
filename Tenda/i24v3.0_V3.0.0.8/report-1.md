@@ -33,6 +33,9 @@ V3.0.0.8(4008)
 ### Vulnerability Class
 CWE-798 Use of Hard-coded Credentials
 
+### CVE_status
+CVE application in progress
+
 ### Description
 Tenda i24v3.0 V3.0.0.8(4008) ships a hardcoded root password in etc_ro/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
 

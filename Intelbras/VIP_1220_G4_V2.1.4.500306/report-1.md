@@ -72,7 +72,7 @@ the same derivation chain.
 ## Status and disclosure
 
 Static confirmation; dynamic rehost blocked by vendor PDI hardware
-dependencies. Candidate; no CVE assigned. No vendor/CNA contact. Marked
+dependencies. Candidate; CVE application in progress.  Marked
 static in the summary table.
 
 ## Additional Information
@@ -89,6 +89,9 @@ V2.1.4.500306
 
 ### Vulnerability Class
 CWE-306 missing authentication / CWE-640 weak password recovery
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The sonia pre-login allow-list includes PasswdFind methods. An attacker can call setContact to change the recovery contact, request a verification code, and reset the admin password without authentication; the 8-character code is derived from time, rand()%1000 and the contact value, with no expiry check.

@@ -126,8 +126,7 @@ three mesh-router models.
   `Linksys Bluetooth command injection` returned zero results.
   CVE-2026-6992 covers a different Bluetooth action
   (`BTRequestGetSmartConnectStatus` `pin`); this report is a distinct
-  sink. Candidate 0-day; no CVE assigned and no vendor contact has been
-  made.
+  sink. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -143,6 +142,9 @@ MBE7000 1.0.14.216607, LN1400 1.0.14.216698, MX6200
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The JNAP BTSelfDisconnect action formats input.duration directly into a shell command in btSelfDisconnect; no validation is applied.

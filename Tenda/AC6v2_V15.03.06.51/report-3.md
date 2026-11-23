@@ -94,7 +94,7 @@ flow hijack is plausible but not demonstrated.
 ## Status and disclosure
 
 Static confirmation (decompilation; handler unchanged). Dynamic pending.
-Candidate new CVE — new affected version (AC6 v2.0 V15.03.06.51) of the public AC7 time overflow; no CVE assigned. No vendor/CNA contact.
+Candidate new CVE — new affected version (AC6 v2.0 V15.03.06.51) of the public AC7 time overflow; CVE application in progress.
 
 ## Additional Information
 
@@ -113,6 +113,9 @@ CWE-121 stack buffer overflow
 
 ### CVE_candidate_type
 new affected version (AC6 v2.0 V15.03.06.51) of the public AC7 time overflow — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 In manual-time mode, fromSetSysTime parses the time parameter with a width-less sscanf into six 12-byte stack buffers, overflowing the stack.

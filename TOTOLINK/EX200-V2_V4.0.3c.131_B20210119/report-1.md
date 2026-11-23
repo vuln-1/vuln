@@ -88,7 +88,7 @@ Unauthenticated root shell via telnet on the LAN.
 
 ## Status and disclosure
 
-Dynamic confirmation (qemu-user; handler unchanged). Candidate new CVE — new affected model (EX200-V2) for CVE-2024-31805; no CVE assigned. No vendor/CNA contact.
+Dynamic confirmation (qemu-user; handler unchanged). Candidate new CVE — new affected model (EX200-V2) for CVE-2024-31805; CVE application in progress.
 
 ## Additional Information
 
@@ -107,6 +107,9 @@ CWE-306 missing authentication / CWE-798 hard-coded credentials
 
 ### CVE_candidate_type
 new affected model (EX200-V2) for CVE-2024-31805 — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 setTelnetCfg is in the token-free allow-list and starts telnetd when telnet_enabled=1. /etc/init.d/rcS copies /etc/shadow.sample to /var/shadow on every boot; the sample contains root password cs2012.

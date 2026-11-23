@@ -96,7 +96,7 @@ so sessions reaching it are normally privileged.
 - NVD keyword searches for `Moxa iptTemp`, `net_WebIPTGetValue` and
   `TN-5916 IP filter` returned zero matching CVEs on 2026-11-08. The
   existing `pingTemp` and SMTP reports are different handlers/frames.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -112,6 +112,9 @@ v3.2 and v3.3
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 filter.asp submits the IP-filter table as iptTemp; the handler copies the raw value into fixed stack buffers before validation, allowing a stack overflow.

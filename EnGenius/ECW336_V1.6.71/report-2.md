@@ -202,7 +202,7 @@ action without credentials.
 - NVD keyword searches on 2026-11-08 for `getLatestFWInfo`,
   `post_mgm_fw_check`, `EnGenius fw_url`, `SERVER_NAME 127.0.0.1
   EnGenius` and `ECW336 command injection` returned zero results.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -218,6 +218,9 @@ ECW336 1.6.71, EWS276-FIT 1.0.45
 
 ### Vulnerability Class
 CWE-290 authentication bypass by spoofing / CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 api.fcgi trusts the Host header when deciding whether a request is local, allowing a remote unauthenticated caller to reach privileged handlers. The fw_url parameter is then interpolated into a shell command, giving command execution.

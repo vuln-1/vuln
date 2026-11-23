@@ -144,7 +144,7 @@ configuration. No memory corruption is required.
 ## Status and disclosure
 
 Dynamic confirmation in a FirmAE ARM image with the stock httpd (no httpd
-code patched). Candidate new CVE — incomplete-fix variant of CVE-2020-11770; no CVE assigned. No vendor/CNA contact.
+code patched). Candidate new CVE — incomplete-fix variant of CVE-2020-11770; CVE application in progress.
 Real-device AP/extender review is recommended before submission.
 
 ## Additional Information
@@ -164,6 +164,9 @@ CWE-78 command injection / CWE-184 incomplete deny-list
 
 ### CVE_candidate_type
 incomplete-fix variant of CVE-2020-11770 — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The usb_adv.cgi action parameter passes a type-3 validator that rejects semicolon, angle brackets, quotes and backticks but not newline. A newline in action breaks out of the shell command and executes arbitrary commands.

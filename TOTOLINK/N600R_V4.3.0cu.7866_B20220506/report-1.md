@@ -88,8 +88,7 @@ also has a separate large-input stack overflow (CWE-121).
 
 ## Status and disclosure
 
-Dynamic confirmation (qemu-user HTTP end-to-end). Candidate 0-day; no CVE
-assigned. No vendor/CNA contact.
+Dynamic confirmation (qemu-user HTTP end-to-end). Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -105,6 +104,9 @@ V4.3.0cu.7866_B20220506
 
 ### Vulnerability Class
 CWE-306 missing authentication / CWE-434 unrestricted upload / CWE-78 command execution
+
+### CVE_status
+CVE application in progress
 
 ### Description
 cstecgi.cgi skips token/cookie verification when the topicurl contains UploadCustomModule. The handler base64-decodes data.File, verifies an attacker-supplied FileMd5, writes /var/custom.cgi with mode 0777 and executes it.

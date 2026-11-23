@@ -170,7 +170,7 @@ CVE-2024-3912.
 - NVD keyword searches on 2026-11-08 for `DSL-N17U`,
   `NetworkToolsAnalysis`, `NetworkToolsNetstat`, `destIP` and
   `NetOption` returned no matching DSL-N17U entry. Candidate 0-day;
-  no CVE assigned and no vendor contact has been made.
+  CVE application in progress.
 
 ## Debug output
 
@@ -225,6 +225,9 @@ DSL-N17U DSL router
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The Network Tools ASP handlers only reject &, ;, %, |, LF and CR in NetOption and destIP. Shell substitutions using $() or backticks survive and are executed by system() in the netstat and ping commands.

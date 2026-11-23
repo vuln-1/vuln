@@ -107,8 +107,7 @@ if the goform route is exposed without a session, it is pre-auth.
 - CVE-2021-46560 is a TN-5900-through-3.1 command-injection issue; this
   v3.2/v3.3 `pingTemp` stack overflow is a distinct memory-safety issue.
   The v3.3 build still contains the same unbounded copy, so the fix was
-  not carried forward. Candidate 0-day; no CVE assigned and no vendor
-  contact has been made.
+  not carried forward. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -124,6 +123,9 @@ v3.2 and v3.3
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 ping.asp submits a hidden pingTemp field; MagicPingThread strcpy's it into a 128-byte stack buffer before string_split and is_ipstring_valid, so a long value reaches the saved return address.

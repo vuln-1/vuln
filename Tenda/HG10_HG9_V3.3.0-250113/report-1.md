@@ -99,7 +99,7 @@ service supports factory commands that can alter or reboot the device.
 
 ## Status and disclosure
 
-Dynamic confirmation (qemu-user). Candidate new CVE — new affected model (HG10/HG9 2025) for the ATE command-execution class; no CVE assigned. No vendor/CNA contact.
+Dynamic confirmation (qemu-user). Candidate new CVE — new affected model (HG10/HG9 2025) for the ATE command-execution class; CVE application in progress.
 
 ## Additional Information
 
@@ -118,6 +118,9 @@ CWE-306 missing authentication / CWE-78 command injection / CWE-798 hard-coded k
 
 ### CVE_candidate_type
 new affected model (HG10/HG9 2025) for the ATE command-execution class — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 process_header_end treats /goform/ate as pre-auth and starts the ATE service on UDP 7329. ATE accepts AES-128-CBC messages with the hard-coded key Tenda0123456789M and a zero IV, and generic_ate executes attacker-supplied commands.

@@ -128,7 +128,7 @@ four models.
   CVE-2024-39226 (s2s API) and CVE-2024-39228 (`check_ovpn_client_config`
   / `check_config`) are different GL.iNet shell-injection issues;
   CVE-2023-50919 is a different nginx/Lua authentication bypass.
-  Candidate 0-day; no CVE assigned and no vendor contact has been made.
+  Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -144,6 +144,9 @@ AR150 3.216, SF1200 3.218, S1300 3.218, USB150 3.218
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 When cloudflare_dns is true and dns_name is NextDNS, the /api/dns/set handler inserts nextdns_id into a single-quoted sed command executed by system(). A crafted ID escapes the quote and runs commands.

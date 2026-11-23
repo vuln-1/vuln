@@ -76,7 +76,7 @@ expose a root service.
 ## Status and disclosure
 
 Dynamic confirmation (qemu-user, seven models; simulated authenticated
-environment). Candidate 0-day; no CVE assigned. No vendor/CNA contact.
+environment). Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -92,6 +92,9 @@ IC-5150W 3.10, IC-5160GC 3.08, IC-7113W 3.10, IC-3140W 3.07
 
 ### Vulnerability Class
 CWE-78 command injection / CWE-912 hidden functionality
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The hidden private/factory.cgi testIperf handler passes the host parameter into a shell command through system(); TestLEDNo and TestLEDStatus form a second injection point. The CGI is reachable after lighttpd authentication and a REMOTE_USER check.

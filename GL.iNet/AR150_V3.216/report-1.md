@@ -121,7 +121,7 @@ validation, the primitive is pre-auth.
   also adds the `sprintf` stack overflow.
   CVE-2019-6272/6275 (older AR300M-Lite), CVE-2022-42055 (GoodCloud), and
   CVE-2023-31472/31476 (pre-3.216 file write) are distinct. Candidate
-  0-day; no CVE assigned and no vendor contact.
+  0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -137,6 +137,9 @@ AR150 3.216, SF1200 3.218, S1300 3.218, USB150 3.218
 
 ### Vulnerability Class
 CWE-78 command injection
+
+### CVE_status
+CVE application in progress
 
 ### Description
 The /api/internet/ping and /api/internet/traceroute handlers pass ping_addr and trace_addr into system() command strings. Ping quotes the value with single quotes, but traceroute does not; an authenticated attacker can inject commands. S1300 also overflows a 256-byte buffer with a long address.

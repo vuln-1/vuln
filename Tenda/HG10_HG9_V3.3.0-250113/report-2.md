@@ -79,7 +79,7 @@ Authenticated admin (or CSRF) root command execution.
 ## Status and disclosure
 
 Dynamic confirmation (qemu-user, auth-bypass test image; handler unchanged).
-Candidate new CVE — new affected model (HG10/HG9 2025) for formTracert; no CVE assigned. No vendor/CNA contact.
+Candidate new CVE — new affected model (HG10/HG9 2025) for formTracert; CVE application in progress.
 
 ## Additional Information
 
@@ -98,6 +98,9 @@ CWE-78 command injection
 
 ### CVE_candidate_type
 new affected model (HG10/HG9 2025) for formTracert — candidate new CVE
+
+### CVE_status
+CVE application in progress
 
 ### Description
 formTracert and formTracert6 pass trys, timeout, maxhop and datasize into /bin/sh -c traceroute without atoi, length or character validation; ;, backticks and $() are accepted.

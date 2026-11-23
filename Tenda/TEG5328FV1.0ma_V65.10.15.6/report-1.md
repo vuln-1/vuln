@@ -31,6 +31,9 @@ V65.10.15.6
 ### Vulnerability Class
 CWE-798 Use of Hard-coded Credentials
 
+### CVE_status
+CVE application in progress
+
 ### Description
 Tenda TEG5328FV1.0ma V65.10.15.6 ships a hardcoded root password in /etc/passwd. An attacker who obtains the firmware image can recover the password and log in as root.
 

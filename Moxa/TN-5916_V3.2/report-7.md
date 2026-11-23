@@ -94,8 +94,7 @@ impact depends on the MIPS64 runtime layout.
 - NVD keyword searches on 2026-11-08 for `net_WebSyslogGetValue`,
   `syslogTemp Moxa`, `net_WebAccessGetValue`, `ipTemp Moxa`,
   `net_WebIPCLIENTGetValue` and `Moxa TN-5916 buffer overflow` returned
-  zero results. Candidate 0-day; no CVE assigned and no vendor contact
-  has been made.
+  zero results. Candidate 0-day; CVE application in progress.
 
 ## Additional Information
 
@@ -111,6 +110,9 @@ v3.2 and v3.3
 
 ### Vulnerability Class
 CWE-121 stack buffer overflow
+
+### CVE_status
+CVE application in progress
 
 ### Description
 syslog.asp submits a syslogTemp string with nine +-separated fields; the handler copies it into fixed stack buffers without bounds checks.

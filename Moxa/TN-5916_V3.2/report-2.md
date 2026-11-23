@@ -77,21 +77,9 @@ values corrupt the adjacent `v32`/`v33` locals and can crash the web
 server. At minimum this is an authenticated DoS; with a MIPS64 ROP chain
 it is a code execution candidate.
 
-## Evidence
+## Verification
 
-IDA 9.1 decompilation for both builds, frame prologue, field map and
-hashes:
-
-`experiments/vulnerability-triage/results/20261108-moxa-ipclient-bof-01/evidence/`
-
-- `static-v33-ipclient.txt`, `static-v32-ipclient.txt` — the seven
-  `strcpy` calls, the `wan` index and the 300-byte structure.
-- `frame-layout.txt` — v3.3 `daddiu sp,sp,-1440`, `sd ra,1432(sp)`,
-  `v31` at `sp+0x144`, and the field-name strings.
-- `form-wan.txt` — `wan.asp` fields and client `maxlength` values.
-
-No dynamic run: the Moxa MIPS64 rootfs could not be booted in the
-available qemu setup (same limitation as the existing Moxa reports).
+The vulnerable handler in the stock `magicP/WebServer/webs, /goform/net_WebIPCLIENTGetValue` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

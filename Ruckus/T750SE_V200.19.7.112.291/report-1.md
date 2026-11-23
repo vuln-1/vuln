@@ -52,15 +52,11 @@ X-Injected: yes
 ...
 ```
 
-A double-CRLF payload produced `INJECTED-BODY` in the response body. Evidence:
-`evidence/http-crlf.txt`, `evidence/http-body-injection.txt` (parent project).
+A double-CRLF payload produced `INJECTED-BODY` in the response body.
 
-## Static evidence
+## Verification
 
-`sub_B140` decodes CGI env with `sub_AF8C`; `sub_AC10` copies `HTTP_COOKIE`
-to offset 427; `webad sub_110B8` copies the request cookie to the response
-cookie; `sub_9E28` prints `Set-Cookie: %s`; `sub_A01C` also reflects on the
-error path. See `evidence/decompilation.txt`.
+The vulnerable handler in the stock `web/client.cgi, usr/sbin/webad, lighttpd 1.4.76` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

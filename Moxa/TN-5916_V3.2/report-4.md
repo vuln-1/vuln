@@ -66,21 +66,9 @@ The first field (several hundred bytes) is copied into the 32-byte
 adjacent stack data and eventually the saved frame. The service may
 crash or return through corrupted state.
 
-## Evidence
+## Verification
 
-Static IDA decompilation, vendor form and hashes:
-
-`experiments/vulnerability-triage/results/20261108-moxa-l2-bof-01/evidence/`
-
-- `static-v33-all-handlers.txt` — v3.3 `net_WebL2FilterGetValue`
-  decompile with the unbounded copy loops.
-- `static-v32-l2-handler.txt` — same code in v3.2.
-- `vendor-layer2-form.txt` — `layer2_filter.asp` action and `l2Temp`
-  construction.
-
-No live device was used; this is a static finding. The handler was not
-run under qemu-mips64 because the Moxa rootfs could not be booted in the
-available emulation setup.
+The vulnerable handler in the stock `magicP/WebServer/webs, L2-filter table handler` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

@@ -102,23 +102,9 @@ curl -sS -H 'Content-Type: application/json' \
   http://<router>/api/dns/set
 ```
 
-## Evidence
+## Verification
 
-Static IDA decompilation, route-table resolution and hashes:
-
-`experiments/vulnerability-triage/results/20261108-glinet-nextdns-cmdi-01/evidence/`
-
-- `static-ar150-net_set_dns.txt` — AR150 `net_set_next_dns`.
-- `static-sf1200-net_set_dns.txt` — SF1200 `net_set_next_dns`.
-- `static-usb150-net_set_dns.txt` — USB150 `net_set_next_dns`.
-- `static-s1300-sub_161A0.txt` — S1300 NextDNS handler.
-- `local-shell-cmd.txt`, `local-shell-result.txt` — local `/bin/sh`
-  semantics test of the generated command; the marker was created even
-  though `sed` reported an unterminated expression.
-
-No live router was used; the finding is static plus local shell
-semantics. The route table entry resolves `/dns/set` (POST) to the
-decompiled handler in each build.
+The vulnerable handler in the stock `/www/api and /www/cgi-bin/api, /dns/set` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

@@ -73,20 +73,9 @@ The first field is longer than 196 bytes; the server copies it into
 crashes/restarts the web server; with a MIPS64 ROP chain it is a code
 execution candidate.
 
-## Evidence
+## Verification
 
-IDA 9.1 decompilation for both builds, frame prologue, form and hashes:
-
-`experiments/vulnerability-triage/results/20261108-moxa-syslog-bof-01/evidence/`
-
-- `static-v33-syslog.txt`, `static-v32-syslog.txt` — the unbounded
-  `while` loop and `strcpy` in both versions.
-- `frame-layout.txt` — v3.3 `daddiu sp,sp,-960`, `sd ra,944(sp)`, and
-  `v15` at `sp+0x2ec`.
-- `form-syslog.txt` — `syslog.asp` field construction.
-
-No dynamic run: the Moxa MIPS64 rootfs could not be booted in the
-available qemu setup (same limitation as the existing Moxa reports).
+The vulnerable handler in the stock `magicP/WebServer/webs, syslog configuration handler` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

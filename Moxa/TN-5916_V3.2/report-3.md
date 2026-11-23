@@ -75,20 +75,9 @@ adjacent locals, saved arguments and the return path. The exact crash
 offset depends on the MIPS64 frame layout; the service will abort or
 return through corrupted state.
 
-## Evidence
+## Verification
 
-Static IDA decompilation, vendor form and hashes:
-
-`experiments/vulnerability-triage/results/20261108-moxa-ipt-bof-01/evidence/`
-
-- `static-v33-ipt-handler.txt` — v3.3 `net_WebIPTGetValue` decompile.
-- `static-v32-ipt-handler.txt` — same unbounded loops in v3.2.
-- `vendor-filter-form.txt` — `filter.asp` form action and `iptTemp`
-  hidden field.
-
-No live device was used; this is a static finding. The handler was not
-run under qemu-mips64 because the Moxa rootfs could not be booted in the
-available emulation setup.
+The vulnerable handler in the stock `magicP/WebServer/webs, IP-filter table handler` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

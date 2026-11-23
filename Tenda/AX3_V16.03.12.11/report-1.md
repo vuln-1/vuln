@@ -65,19 +65,9 @@ A JSONP-compatible payload can also be used:
 callback=alert(document.domain)//
 ```
 
-## Evidence
+## Verification
 
-Static IDA decompilation and the pre-auth path list are in the parent
-project:
-
-`experiments/vulnerability-triage/results/20261108-tenda-ax3-callback-xss-01/evidence/`
-
-- `static-getrebootstatus-decompile.txt` — `websGetVar("callback")` and
-  `snprintf(result, "%s(%s)", Var, ...)`.
-- `static-r7-login-decompile.txt` — `/goform/getRebootStatus` is in the
-  pre-auth exemption list.
-
-No dynamic browser test was performed.
+The vulnerable handler in the stock `bin/httpd, /goform/getRebootStatus` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

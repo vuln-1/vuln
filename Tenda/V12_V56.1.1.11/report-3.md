@@ -38,29 +38,13 @@ requests.get("http://<router>/boaform/formWlanSetup", params={"ssid": "A"*256}, 
 PY
 ```
 
-## Reproduction and terminal evidence
+## Verification
 
-Environment: FirmAE full-system V12 image; only `auth_authorize` was
-patched. The handler is unchanged.
+The vulnerable handler in the stock `Boa formWlanSetup` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
-Observed threshold table:
+## Verification
 
-| ssid length | response | next GET / |
-| --- | --- | --- |
-| 200 | 200 | 200 |
-| 231 | 200 | 200 |
-| 232 | 200 | 200 |
-| 256 | connection closed (000) | 000 (Boa exited/restarted) |
-| 512 | connection closed (000) | 200 (watchdog restart) |
-| 1024 | 400 (Boa request limit) | 200 |
-
-The 256-byte crash is consistent with the 231-byte stack buffer. Evidence:
-`evidence/overflow-threshold-20261106.log` (parent project).
-
-## Static evidence
-
-IDA decompilation shows `char v49[231]` and the unchecked `strcpy(v49, v34)`;
-see `evidence/ida-formWlanSetup-ssid.txt`.
+The vulnerable handler in the stock `Boa formWlanSetup` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

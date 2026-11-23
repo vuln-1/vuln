@@ -122,28 +122,9 @@ Basic credential. After the request:
 cat /tmp/led_pwn
 ```
 
-## Evidence
+## Verification
 
-Static source, action-auth flags, local shell reproduction and hashes:
-
-`experiments/vulnerability-triage/results/20261108-linksys-mx6200-stop-led-cmdi-01/evidence/`
-
-- `static-setup-stop-blinking.txt` — handler, constant, sink and LED
-  script argument handling with line numbers.
-- `parse_action_flags.py`, `action-auth-flags.txt` — parses the
-  `libjnap_setup.so` action descriptors and shows `StopBlinkingNodeLed`
-  flags `0x4` versus the no-auth `0x5`/`0xd` actions.
-- `cmd.txt`, `result.txt` — local `/bin/sh` run of the exact generated
-  command; `id` output written to `/tmp/mx6200_stop_led_pwn`.
-- MBE7000/LN1400 model expansion:
-  `experiments/vulnerability-triage/results/20261108-linksys-mbe7000-ln1400-jnap-cmdi-01/evidence/mbe-ln-stop-led.txt`
-  and `action-flags.txt`.
-
-A qemu-arm CGI harness loaded the Lua module and `libjnap_setup.so`, but
-the synthetic environment (no device syscfg/UTCTX state) made the JNAP
-dispatcher return `_ErrorUnknownAction` before invoking any handler.
-The finding is therefore static plus local shell semantics; no live
-router was used.
+The vulnerable handler in the stock `JNAP action StopBlinkingNodeLed` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

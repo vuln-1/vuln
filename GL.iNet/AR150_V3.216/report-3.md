@@ -99,22 +99,9 @@ Check the marker:
 cat /tmp/fw_url_pwn
 ```
 
-## Evidence
+## Verification
 
-Static IDA decompilation, setter, shell test and hashes:
-
-`experiments/vulnerability-triage/results/20261108-glinet-upgrade-url-cmdi-01/evidence/`
-
-- `static-s1300-upgrade_url-setter.txt` — `/firmware/upgrade_url/set`
-  stores the URL without validation.
-- `static-s1300-sub_17988.txt` — `/firmware/onlinecheck` builds
-  `curl ... %s/list-sha256.txt`.
-- `static-s1300-sub_17774.txt` — `ReleaseNote.txt`/metadata `curl`
-  commands with `system()`.
-- `cmd.txt`, `result.txt` — local `/bin/sh` test of the exact generated
-  command; marker created.
-
-No live router was used; this is static plus local shell semantics.
+The vulnerable handler in the stock `/www/api and /www/cgi-bin/api, /firmware/upgrade_url/set` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

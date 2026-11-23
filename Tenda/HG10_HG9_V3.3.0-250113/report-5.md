@@ -39,8 +39,7 @@ python3 poc_tftp.py read  <device> /etc/inittab
 # WRQ: write an arbitrary absolute path as root
 python3 poc_tftp.py write <device> /etc/tftp_abs_proof
 
-# The minimal client is included in the parent project as
-# results/20261106-tenda-hg10-tftp-01/poc_tftp.py.
+# Minimal TFTP client (see the PoC above).
 ```
 
 ## Reproduction and terminal evidence
@@ -63,13 +62,10 @@ $ ls -l /etc/tftp_abs_proof
 ```
 
 On V12 the same RRQ/WRQ returns `/etc/inittab` and creates
-`/etc/v12_tftp_abs_proof`; evidence `evidence/tftp-rrq-inittab.txt`,
-`evidence/tftp-wrq-transcript.txt`, `evidence/v12-tftp-*` (parent project).
 
-## Static evidence
+## Verification
 
-`sub_40118C` accepts absolute paths for RRQ/WRQ; the inetd line runs tftpd as
-root. See `evidence/ida-tftpd-path.txt` (parent project).
+The vulnerable handler in the stock `inetd + /bin/tftpd, UDP 69` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

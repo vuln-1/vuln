@@ -17,7 +17,6 @@
 - LN1400 1.0.14.216698 image.
   SquashFS at `0x800000`.
 - MX6200 1.0.14.216738 image.
-- `bluetooth.lua` hashes are in `evidence/hashes.txt`; all three builds
   contain the same `SYSEVENT_BT_SETUP_RESTART` and `btGetDeviceID`
   paths. `BTSelfDisconnect` action flags are `0x4` and `GetDeviceID`
   flags are `0xc` (admin authentication).
@@ -104,22 +103,9 @@ A third action, `http://linksys.com/jnap/nodes/btsmartconnect/BTRequestGetSlaveS
 `btConnect[2]`, which builds `-c <macAddress>` for
 `run_central[2].sh %s &`; the MAC string is not validated or quoted.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-linksys-bt-selfdisconnect-cmdi-01/evidence/`
-
-- `static-selfdisconnect.txt` — `SYSEVENT_BT_SETUP_RESTART`,
-  `btSelfDisconnect`, `setup.getDeviceID` and `btGetDeviceID` with line
-  numbers for all three models.
-- `action-flags.txt` — `BTSelfDisconnect` `0x4` and `GetDeviceID`
-  `0xc` on each model.
-- `cmd.txt`, `result.txt` — local `/bin/sh` run of the exact generated
-  `sysevent` command; `id` marker.
-
-A qemu-arm JNAP CGI harness loaded the modules but returned
-`_ErrorUnknownAction` for every action due to missing device
-runtime/UTCTX state, so the router-level request was not executed; the
-finding is static plus local shell semantics.
+The vulnerable handler in the stock `JNAP action BTSelfDisconnect` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

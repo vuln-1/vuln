@@ -71,20 +71,9 @@ The first field is longer than 124 bytes; the server copies it into
 minimum this crashes/restarts `webs`; with a MIPS64 ROP chain it is a
 code execution candidate.
 
-## Evidence
+## Verification
 
-IDA 9.1 decompilation for both builds, frame prologue, form and hashes:
-
-`experiments/vulnerability-triage/results/20261108-moxa-access-bof-01/evidence/`
-
-- `static-v33-access.txt`, `static-v32-access.txt` — the unbounded
-  `while` loop and `strcpy` calls in both versions.
-- `frame-layout.txt` — v3.3 `daddiu sp,sp,-2016`, `sd ra,2008(sp)`, and
-  `v29` at `sp+0x75c`.
-- `form-access.txt` — `accessible_setting.asp` `ipTemp` construction.
-
-No dynamic run: the Moxa MIPS64 rootfs could not be booted in the
-available qemu setup (same limitation as the existing Moxa reports).
+The vulnerable handler in the stock `magicP/WebServer/webs, access-control ipTemp handler` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

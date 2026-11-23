@@ -119,23 +119,9 @@ A local `/bin/sh` run of the exact generated `mkdir` command created
 the marker with the `id` output. The same code path handles
 `/cvmcfgupload` with the `cvm` prefix.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-draytek-apmcfg-upload-cmdi-01/evidence/`
-
-- `static-main-apmcfgupload.txt` — `main` dispatch and the
-  `session=`/`sub_13450` branch.
-- `static-sub13450-upload.txt` — multipart filename, `cgiEscape`,
-  `mkdir -p` and `system`.
-- `cgiescape.txt` — `cgiEscape` only escapes `<`, `>`, `&`.
-- `cmd.txt`, `result.txt` — local shell test of the exact generated
-  command; `id` marker.
-- `static-sub13450-upload.txt` also shows `char v20[64]` and
-  `strcpy(v20, v8)` for the filename-prefix stack overflow.
-
-The ARM EABI4 CGI could not be executed under the available qemu
-(exits before loading the ELF interpreter), so the router-level HTTP
-request was not run; the finding is static plus local shell semantics.
+The vulnerable handler in the stock `www/cgi-bin/mainfunction.cgi, /apmcfgupload and /cvmcfgupload` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

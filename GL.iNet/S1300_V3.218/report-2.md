@@ -87,19 +87,9 @@ is disrupted. A WPA-enterprise request can use the same length in
 `identity`/`password`; `mac`/`channel` are shorter paths that corrupt
 only adjacent locals.
 
-## Evidence
+## Verification
 
-Static IDA decompilation, route-table entry and hashes:
-
-`experiments/vulnerability-triage/results/20261108-glinet-s1300-repeater-join-bof-01/evidence/`
-
-- `static-sub_32ECC-repeater-join.txt` — full handler decompilation with
-  buffer declarations and `strcpy` calls.
-- `route-table.txt` — `/repeater/join` POST -> `sub_32ECC`.
-
-No live router was used; this is a static finding. The overflow reaches
-the canary before return; no canary leak or code-execution payload was
-developed.
+The vulnerable handler in the stock `/www/cgi-bin/api, /repeater/join` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

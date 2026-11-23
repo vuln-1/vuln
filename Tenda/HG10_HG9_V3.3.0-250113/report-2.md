@@ -52,15 +52,11 @@ $ curl ... formTracert6 ... 'trys=1;echo TRACERT6_PWN>/dev/console;#'
 TRACERT6_PWN
 ```
 
-`datasize=1;echo TRACERT_DATASIZE>/dev/console;#` also executes. Evidence:
-`evidence/dynamic-response-tracert*.txt`, `evidence/dynamic-console-*.txt`
-(parent project).
+`datasize=1;echo TRACERT_DATASIZE>/dev/console;#` also executes.
 
-## Static evidence
+## Verification
 
-The decompilation shows `snprintf`/`sprintf` building the traceroute command
-with the raw parameters and a `system` call; no validation is present. See
-`evidence/ida-formTracert.txt` (parent project).
+The vulnerable handler in the stock `Boa formTracert and formTracert6` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

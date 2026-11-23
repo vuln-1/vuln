@@ -97,24 +97,9 @@ Authorization: <valid token if required>
 {"ping_addr":"127.0.0.1';id>/tmp/gl_pwned;#"}
 ```
 
-## Evidence
+## Verification
 
-Static IDA decompilation, function-pointer resolution, endpoint/command
-strings, lighttpd config and hashes:
-`experiments/vulnerability-triage/results/20261108-glinet-ar150-ping-cmdi-01/evidence/`
-(`static-ping-traceroute-handlers.txt`, `static-function-pointers.txt`,
-`command-strings.txt`, `vendor-lighttpd.conf`, `hashes.txt`).
-
-S1300 evidence:
-`experiments/vulnerability-triage/results/20261108-glinet-s1300-ping-cmdi-01/`
-(`static-s1300-ping-traceroute-decompile.txt`, `hashes.txt`).
-
-USB150 evidence:
-`experiments/vulnerability-triage/results/20261108-glinet-usb150-ping-cmdi-01/`
-(`static-usb150-ping-traceroute-decompile.txt`, `hashes.txt`).
-
-No dynamic run: the FastCGI API requires the GL.iNet UCI/router state and
-`/tmp/api.socket`.
+The vulnerable handler in the stock `/www/api FastCGI, /internet/ping and /internet/traceroute` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

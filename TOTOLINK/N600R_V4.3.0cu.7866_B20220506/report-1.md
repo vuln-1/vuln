@@ -61,20 +61,15 @@ GET /cgi-bin/custom.cgi -> 200, body: PWNED
 ```
 
 The uploaded payload was a 1.1 KB static MIPS big-endian ELF that writes
-`PWNED\n` to stdout. Evidence: `evidence/dynamic-http-e2e.log`,
-`evidence/ida-UploadCustomModule.txt` (parent project).
 
-## Static evidence
+## Verification
 
-The `main` allow-list check (`strstr(Var, "UploadCustomModule")` skips the
-token path) and the handler's `cp`/`chmod` `system` calls are in
-`evidence/ida-other-handle-table.txt` and `evidence/ida-UploadCustomModule.txt`.
+The vulnerable handler in the stock `cstecgi.cgi setting/UploadCustomModule` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 
 Unauthenticated root code execution and persistence. The same `File` field
-also has a separate large-input stack overflow (CWE-121) tracked in the parent
-project.
+also has a separate large-input stack overflow (CWE-121).
 
 ## Remediation
 

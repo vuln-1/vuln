@@ -70,11 +70,9 @@ generic_ate echo${IFS}GEN_PWN -> b'GEN_PWN\n'
 `${IFS}` is used instead of a literal space because the ATE parser splits on
 spaces before invoking the shell.
 
-## Static evidence
+## Verification
 
-`generic_ate` and `start_effect` decompilation shows the `system`/`popen`
-calls and the hard-coded AES key; see `evidence/ida-ate-generic.txt` and
-`evidence/ida-ate-start_effect.txt` (parent project).
+The vulnerable handler in the stock `/bin/ate via unauthenticated GET /goform/ate; UDP 7329` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

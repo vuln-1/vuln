@@ -16,8 +16,7 @@
 - `ecw336-1.6.71-1.bin`.
 - Decrypted image (EnGenius XOR header transform).
 - `www/cgi-bin/api.fcgi`.
-- `lib/libsnjsonap.so` and `sbin/getLatestFWInfo.sh` hashes are in
-  `evidence/hashes.txt`.
+- `lib/libsnjsonap.so` and `sbin/getLatestFWInfo.sh`.
 
 ### EWS276-FIT 1.0.45
 
@@ -179,36 +178,9 @@ reset pre-auth. Its only check is
 `md5(uppercase(MAC of br-lan))` (32 hex characters), and the LAN MAC is
 printed on the device and visible in ARP, so it is not a secret.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-engenius-host-bypass-rce-01/evidence/`
-
-- `static-auth-bypass-main.txt` — `api.fcgi` `main` with the
-  `SERVER_NAME`/`127.0.0.1` branch and JWT error path.
-- `static-fw-check-cmdi.txt` — `json_post_mgm_fw_check` decompilation
-  with `sprintf("sh /sbin/getLatestFWInfo.sh %s &", fw_url)` and
-  `system`.
-- `static-fw-download-cmdi.txt` — the parallel
-  `sh /sbin/doDownloadFW.sh %d %s &` sink.
-- `static-reset-with-key.txt` — the MAC-md5-only pre-auth reset.
-- `dispatch-entry.txt` — dispatch entries and masks; default role 1.
-- `lighttpd-server-name.txt` — stock lighttpd maps `Host` to
-  `SERVER_NAME`.
-- `native-server-dynamic.txt` — ECW336 native 1.4.69 server: 200 for
-  Host 127.0.0.1, 401 for the normal Host, and the fw_check `id` marker.
-- `dynamic-auth-bypass.txt`, `dynamic-auth-bypass-ews276.txt` — same
-  URI with Host 127.0.0.1 vs 192.168.0.110, no JWT, for ECW336 and
-  EWS276-FIT.
-- `dynamic-rce.txt`, `dynamic-rce-ews276.txt` — spoofed Host request
-  returns 200 and creates the `id` marker; unspoofed request returns 401
-  and creates nothing.
-- `dynamic-fw-url-overflow.txt` — 2000/4000-byte `fw_url` values trip
-  `child signalled: 11` in the FastCGI log.
-- `frame-fw-check.txt` — `json_post_mgm_fw_check` frame/saved-lr layout
-  and absence of a stack-canary import.
-- `lighttpd-api.conf`, `lighttpd-ews276.conf`, `env.cgi` — harness
-  configuration.
-  lighttpd/senao-openapi-server and `getLatestFWInfo.sh` hashes.
+The vulnerable handler in the stock `www/cgi-bin/api.fcgi FastCGI handler` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

@@ -56,13 +56,9 @@ $ ls -l /tmp/apimage/rcks_fw.bl7
 16777239 bytes
 ```
 
-Evidence: `evidence/http-upload.txt`, `evidence/http-upload-large.txt`
-(parent project).
+## Verification
 
-## Static evidence
-
-`sub_AC10`/`sub_A680` write the multipart content before the `webad`/session
-check. See `evidence/decompilation.txt`.
+The vulnerable handler in the stock `web/client.cgi, /upload/fw and /upload/cert` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

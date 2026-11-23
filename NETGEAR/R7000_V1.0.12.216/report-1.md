@@ -60,7 +60,6 @@ kernel `zImage.armel`), stock `usr/sbin/httpd` with no httpd code patches.
 The harness sets `/firmadyne/libnvram/enable_ap_mode=1` after httpd startup
 (httpd's own NVRAM init resets it to 0) and posts from 127.0.0.1, which httpd
 treats as authenticated and CSRF-exempt. A FirmAE libnvram NULL-return bug was
-patched in the emulation shim only; see the parent project RUN.md.
 
 Control request (`action=control1`) followed by the payload (`action=%0aid`).
 Serial console transcript:
@@ -84,9 +83,6 @@ USBAdvCgiMain:1708-----input_vail_err-----
 The `uid=0 gid=0(root)` line is the injected `id`. The subsequent 400 is the
 handler validating an absent `workGroup`; command execution already happened.
 The control request produced no `uid` line.
-
-Reproduction scripts (parent project): `src/build_firmae_netgear_r7000_image.sh`,
-`src/run_firmae_netgear_r7000.sh`, `src/r7000_usbadv_client.c`.
 
 ## Static evidence
 

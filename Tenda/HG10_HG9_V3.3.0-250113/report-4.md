@@ -67,13 +67,10 @@ EPON_PWNED
 
 The marker appears on `/dev/console` because the command substitution is
 evaluated by the shell inside `system()`. Evidence log:
-`evidence/dynamic-epon-injection.log` in the parent project.
 
-## Static evidence
+## Verification
 
-The decompiled handler and the `sprintf(..., "/bin/oamcli set ctc loid %d \"%s\" \"%s\"", ...)` + `system(v11)` call are in
-`evidence/ida-formeponConf.txt` (parent project). No length or character
-filter sits between `boaGetVar` and the format string.
+The vulnerable handler in the stock `Boa formeponConf` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

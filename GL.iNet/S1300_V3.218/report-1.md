@@ -76,22 +76,9 @@ cat /tmp/ch_pwn
 
 The marker contains the output of `id` in the web/API process context.
 
-## Evidence
+## Verification
 
-Static IDA decompilation, route table, hashes and local shell test:
-
-`experiments/vulnerability-triage/results/20261108-glinet-s1300-channel-cmdi-01/evidence/`
-
-- `static-api-sub_3D538-channel-optimize.txt` — route handler reading
-  `ifname` and calling the model-specific helper.
-- `static-libglutil-optimal-ipq40xx.txt` — helper with
-  `sprintf("iwpriv %s acsreport 1", ifname)` and `system()`.
-- `route-table.txt` — `/ap/channel_optimize` POST -> `sub_3D538`.
-- `cmd.txt`, `result.txt` — local `/bin/sh` semantics test of the exact
-  generated command; the marker was created.
-
-No live router was used; the finding is static plus local shell
-semantics.
+The vulnerable handler in the stock `/www/cgi-bin/api, /ap/channel_optimize` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

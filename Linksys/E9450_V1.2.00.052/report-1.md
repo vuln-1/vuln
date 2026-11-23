@@ -80,20 +80,9 @@ Cookie: <valid administrator session>
 The `id` output is written to the httpd/CGI output or log; a longer
 payload can create a marker file if the 19-byte limit is respected.
 
-## Evidence
+## Verification
 
-Static IDA decompilation, helper, shell test and hashes:
-
-`experiments/vulnerability-triage/results/20261108-linksys-e9450-mac-cmdi-01/evidence/`
-
-- `static-mesh-pairing-handlers.txt` — `sub_38678`/`sub_388B8` with the
-  `sprintf` + `rut_doSystemAction` calls.
-- `static-cgiGetValueByNameSafe.txt` — `sub_34AF8`, 19-byte limit and
-  URL decoding, no character filter.
-- `cmd.txt`, `result.txt` — local `/bin/sh` test showing `id` execution.
-
-No live router was used; this is a static finding plus local shell
-semantics.
+The vulnerable handler in the stock `bin/httpd, mesh child-node pairing CGI` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

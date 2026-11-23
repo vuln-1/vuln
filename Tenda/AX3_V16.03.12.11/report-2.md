@@ -58,16 +58,9 @@ The password must equal `g_Pass` for the copy to be reached. A router
 whose admin password is longer than 128 bytes, or a caller that knows the
 valid password, can trigger the overflow.
 
-## Evidence
+## Verification
 
-Static IDA decompilation and disassembly are in the parent project:
-
-`experiments/vulnerability-triage/results/20261108-tenda-ax3-known-cve-triage-01/evidence/`
-
-- `static-r7-login-decompile.txt` — `pcookie[128]`, `websGetVar` and
-  `strcpy(pcookie, Var)`.
-- `static-r7-disasm.txt` — `strcpy` at `0x28450`, destination
-  `sp+0x60`.
+The vulnerable handler in the stock `bin/httpd, R7WebsSecurityHandler login path` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

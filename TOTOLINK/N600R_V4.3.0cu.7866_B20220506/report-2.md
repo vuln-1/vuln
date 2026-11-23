@@ -51,13 +51,9 @@ $ cat /tmp/pwned
 PWNED
 ```
 
-Evidence: `evidence/poc-request.txt`, `poc.py` (parent project).
+## Verification
 
-## Static evidence
-
-`sub_...` builds `ping %s` with the raw `ipDoamin` and calls `system`;
-`Validity_check` accepts newline. Decompilation is in
-`evidence/ida-setDiagnosisCfg.txt` (parent project).
+The vulnerable handler in the stock `cstecgi.cgi setting/setDiagnosisCfg` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

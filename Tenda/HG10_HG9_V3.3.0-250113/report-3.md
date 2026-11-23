@@ -42,7 +42,7 @@ before any real config validation.
 ```python
 # product_key is 23 bytes and satisfies the < 24 check.
 # The upload also needs a tar.gz whose member path matches the key so the
-# handler's access() check passes; the parent project's poc.py builds both.
+# handler's access() check passes; the PoC builds both.
 payload = b";echo PW>/dev/console;#"
 
 # POST a multipart/form-data body to:
@@ -76,15 +76,11 @@ PW
 ```
 
 The device then reboots because the success path calls `cmd_reboot()`; the
-curl timeout after the POST is expected. Evidence:
-`evidence/qemuuser-boa-debug.log`, `evidence/fullsystem-serial-upload.log`
-(parent project). Full PoC: `poc.py` in the same result directory.
+curl timeout after the POST is expected.
 
-## Static evidence
+## Verification
 
-`td_AL_external_interface` decompilation shows the four `system()` calls and
-the missing quoting; the `product_key` length check is the only validation.
-See `evidence/ida-td_AL_external_interface.txt` (parent project).
+The vulnerable handler in the stock `Boa formUploadConfig -> libmib.so td_AL_external_interface` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

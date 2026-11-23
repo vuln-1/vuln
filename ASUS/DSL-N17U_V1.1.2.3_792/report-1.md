@@ -150,24 +150,9 @@ Observed:
 - `/proc/<shell>/cmdline` captured for the WOL handler:
   `ether-wake -i br0 $(cat</proc/$$/cmdline>/tmp/WOLCMD)`.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-asus-dsl-n17u-preauth-rce-01/evidence/`
-
-- `http_plain_login_redirect.txt` — control, no session.
-- `http_pathinfo_js_bypass.txt` — `.asp/x.js` returns the WOL page.
-- `http_advanced_system_bypass.txt` — `Advanced_System_Content.asp/x.js`
-  returns the 63,549-byte admin System page (title
-  `ASUS DSL-N17U - System`) with no session;
-  `http_advanced_system_plain_redirect.txt` is the login-redirect
-  control for the same page.
-- `http_wol_rce_request.txt`,
-  `http_wol_rce_nondefault_password.txt` — exploit responses.
-- `marker_ASUS_PREAUTH_PWNED`,
-  `marker_ASUS_PREAUTH_RCE_STRONG` — 8074-byte copies of `boa.conf`
-  produced by the injected `cp`.
-- `shell_cmdline_wol.txt` — captured generated command line.
-- `tcapi_stub.py`, `start_boa_emulation.sh`, `boa_run.conf` — harness.
+The vulnerable handler in the stock `userfs/bin/boa, ASP builtin WOL_Invoke` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

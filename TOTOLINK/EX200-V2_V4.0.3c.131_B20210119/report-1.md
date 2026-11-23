@@ -59,8 +59,6 @@ uid=0(root) gid=0(root)
 ```
 
 `strace` of the handler shows `execve("/bin/sh","-c","telnetd & ...")`.
-Evidence: `evidence/ida-setTelnetCfg-ex200v2.txt`, `evidence/telnet-root.log`
-(parent project).
 
 ## Static evidence
 

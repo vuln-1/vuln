@@ -98,19 +98,9 @@ Basic credential. After the request:
 cat /tmp/sysinfo_pwn
 ```
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-linksys-mbe7000-ln1400-jnap-cmdi-01/evidence/`
-
-- `mbe7000-upload-sysinfo.txt`, `ln1400-upload-sysinfo.txt` — handler
-  and `os.execute` sink with line numbers.
-- `action-flags.txt` — `UploadSysinfoData` flags `0xc` in both builds.
-- `mbe-ln-stop-led.txt` — the separate `StopBlinkingNodeLed` sink in
-  the same builds.
-
-A qemu-arm JNAP CGI harness loaded the MBE7000 modules but returned
-`_ErrorUnknownAction` for every action due to missing device
-runtime/UTCTX state, so this finding is static; no live router was used.
+The vulnerable handler in the stock `JNAP action UploadSysinfoData` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

@@ -127,17 +127,9 @@ required.
 - Candidate 0-day; no CVE assigned and no vendor contact has been
   made.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-dlink-e15-12001-preauth-dos-01/evidence/`
-
-- `request_noaction.bin`, `request_emptyaction.bin` — exact request
-  bytes (no auth header, no cookie).
-- `request_noaction.hex` — minimal-request hexdump.
-- `run_noaction.log`, `run_emptyaction.log` — readiness, SIGSEGV and
-  post-crash connection-refused transcripts.
-- `dos_probe.sh` — in-namespace probe script.
-- `static_notes.txt` — handler offsets and NULL `strcmp` path.
+The vulnerable handler in the stock `bin/httpd, /DHMAPI/ Login action` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Additional Information
 

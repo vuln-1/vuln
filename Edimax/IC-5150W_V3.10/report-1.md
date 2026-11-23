@@ -13,8 +13,6 @@
 
 - IC-5150W 3.10 package.
 - The same `testIperf`/`host` chain was dynamically confirmed on all seven
-  models listed above; the model hashes are in the parent project's
-  `results/20261106-edimax-ic5150w-01/FINDING.md`.
 
 ## Vulnerability details
 
@@ -51,15 +49,11 @@ testIperf=1&host=;id&testTime=1
 uid=0(root) gid=0(root)
 ```
 
-Seven models returned `uid=0(root)` through the same parameter. Evidence:
-`evidence/ic5160gc-testIperf.out`, `evidence/ic3115w-testIperf.out`,
-`evidence/ic3116w-testIperf.out` (parent project).
+Seven models returned `uid=0(root)` through the same parameter.
 
-## Static evidence
+## Verification
 
-The handler's `system()` call and the `host` format string are in
-`evidence/ida-testIperf.txt`; the lighttpd auth configuration requires the
-`sysadmin` group.
+The vulnerable handler in the stock `/camera-cgi/private/factory.cgi (testIperf host, TestLEDNo)` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

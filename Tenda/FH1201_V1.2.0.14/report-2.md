@@ -68,7 +68,6 @@ formexeCommand 0x46f0ac:
 ```
 
 Registration: `formDefineTendDa` xref to `formexeCommand` at `0x43be58`.
-Full decompilation is retained in the parent project.
 
 ## Impact
 

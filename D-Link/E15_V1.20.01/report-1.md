@@ -15,7 +15,6 @@
 - `E15_reva_Firmware_12001.bin`.
   (`MH01` container decrypted with the delink-ng E15 key
   `044b4e59846ecee953662ff2238fcc23`; see
-  `20261108-dlink-e15-12001-triage-01`).
 - `bin/httpd`.
 - `usr/sbin/commander`.
 - `lib/libutils.so`.
@@ -189,18 +188,9 @@ unauthenticated Login NULL-dereference DoS on the same firmware.
   the E15 was found. Candidate 0-day; no CVE assigned and no vendor
   contact has been made.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-dlink-e15-12001-ntp-lead-01/`
-
-- `RUN.md` — reverse-engineering notes, csman write/read tests, and
-  the emulation limitation.
-- `evidence/cmdtest2.py`, `evidence/wtest2.py` — csman
-  `0x70010`/`0x80070001` write and trigger tests (flag cleared by
-  `commander`).
-- `evidence/driver9.log`, `evidence/driver10`-related logs in the
-  scratch run directory — DHMAPI attempts; the upgrade-mode `400`
-  responses are environmental.
+The vulnerable handler in the stock `bin/httpd DHMAPI, usr/sbin/commander, usr/bin/syncdateNTP.sh` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Additional Information
 

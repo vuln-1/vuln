@@ -55,14 +55,12 @@ POST /cgi-bin/cstecgi.cgi (no token) -> 200 {"Result":"Success"}
 GET  /cgi-bin/custom.cgi             -> 200, body: PWNED
 ```
 
-The uploaded 1.1 KB ELF writes `PWNED` to stdout. Evidence:
-`evidence/poc-http.log`, `evidence/ida-UploadCustomModule.txt` (parent
+The uploaded 1.1 KB ELF writes `PWNED` to stdout.
 project).
 
-## Static evidence
+## Verification
 
-The handler has no token check; the write/chmod `system` calls and the
-symlink are shown in `evidence/ida-UploadCustomModule.txt`.
+The vulnerable handler in the stock `cstecgi.cgi UploadCustomModule` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

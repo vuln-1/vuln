@@ -68,9 +68,6 @@ R7WebsSecurityHandler pre-auth list: /public/, /lang/, /images/,
   /goform/BulletinBoard, /goform/ate (WriteFacMac not listed)
 ```
 
-Full decompilation is in the parent project's
-`scratch/tenda-fh1201-v1.2.0.14/ida/` directory.
-
 ## Impact
 
 Authenticated admin (or CSRF) root command execution.

@@ -46,13 +46,11 @@ $ curl -sS --data-urlencode \
 
 The response contains the injected marker, proving command execution. A
 headless-Chrome CSRF page submitted the same form from a logged-in admin
-context and created a root-owned `/tmp/ping_csrf` in the guest. Evidence:
-`evidence/poc-output.txt`, `poc_csrf.html` (parent project).
+context and created a root-owned `/tmp/ping_csrf` in the guest.
 
-## Static evidence
+## Verification
 
-The handler builds `ping6 ... %s` and calls `system`; see
-`evidence/ida-formPingV6.txt` (parent project).
+The vulnerable handler in the stock `Boa formPingV6` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

@@ -131,17 +131,9 @@ Observed:
   via a diagnostic `system()` logger; the `&` explains why the files
   appear shortly after the response.
 
-## Evidence
+## Verification
 
-`experiments/vulnerability-triage/results/20261108-asus-dsl-n17u-preauth-rce-01/evidence/`
-
-- `http_netstat_plain_login_redirect.txt` — control POST, login
-  redirect.
-- `http_netstat_rce_request.txt`,
-  `http_analysis_rce_request.txt` — exploit responses.
-- `marker_NET_PWNED`, `marker_ANA_PWNED` — 8074-byte copies of
-  `boa.conf` produced by the injected commands.
-- `tcapi_stub.py`, `start_boa_emulation.sh`, `boa_run.conf` — harness.
+The vulnerable handler in the stock `userfs/bin/boa, NetworkToolsNetstat and NetworkToolsAnalysis` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

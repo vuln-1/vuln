@@ -70,9 +70,6 @@ sscanf(tmpstr, "%[^-]-%[^-]-%[^ ] %[^:]:%[^:]:%s",
        year, month, day, hour, min, sec);
 ```
 
-Full decompilation: parent project
-`scratch/tenda-ac6v2-v15.03.06.51/ida/dec.txt`.
-
 ## Impact
 
 Authenticated admin (or CSRF) stack corruption / denial of service; control

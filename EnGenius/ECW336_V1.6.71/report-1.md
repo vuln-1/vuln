@@ -88,27 +88,9 @@ The same handler is used by all three models; EWS377AP v3 is the
 strongest target because the overwrite reaches the saved frame and the
 binary has no stack canary.
 
-## Evidence
+## Verification
 
-Decryption, decompilation, ASAN test and hashes:
-
-`experiments/vulnerability-triage/results/20261108-engenius-ecw336-uri-bof-01/evidence/`
-
-- `static-api-main.txt` — ECW336 `main` with `v59[224]` and the
-  unbounded `sscanf`.
-- `ews377-api-main.txt`, `ews276-api-main.txt` — the same parser with
-  `v61[32]`/`v62[32]`/`v63[152]`.
-- `sscanf_test.c`, `ews_sscanf_test.c` — minimal reproductions of the
-  ECW336 and EWS layouts.
-- `asan-output.txt`, `ews-asan-output.txt` — ASAN
-  `stack-buffer-overflow`, 501-byte writes.
-
-The EnGenius XOR transform is the public `ryancdotorg` gist scheme:
-key `\xac\x78\x3c\x9e\xcf\x67\xb3\x59`, header length byte at `0x87`,
-payload starts at `n + 0x88`.
-
-No live access point was used; the finding is static plus local ASAN
-semantics.
+The vulnerable handler in the stock `/www/cgi-bin/api.fcgi request URI parser in main` was decompiled from the unpacked rootfs; the relevant code and offsets are quoted above. No dynamic run was completed.
 
 ## Impact
 

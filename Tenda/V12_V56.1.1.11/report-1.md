@@ -58,13 +58,10 @@ OMCI_PWNED
 
 A headless Chrome page auto-submitted a `<textarea name="file">` multipart
 form from a logged-in admin context; the guest created `/tmp/csrf_pwned`
-containing `CSRF_PWNED`. Evidence: `evidence/dynamic-*.log`, `poc_csrf.html`
-(parent project).
 
-## Static evidence
+## Verification
 
-The decompilation shows the body written to `/tmp/omcishell` and
-`system("/bin/sh /tmp/omcishell")`; see `evidence/ida-formImportOMCIShell.txt`.
+The vulnerable handler in the stock `Boa formImportOMCIShell` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

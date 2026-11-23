@@ -85,9 +85,6 @@ strcpy(param, security);
 strcpy(param_5g, security_5g);
 ```
 
-Full decompilation: parent project
-`scratch/tenda-ac6v2-v15.03.06.51/ida/dec.txt` (not included here because it
-contains the vendor binary context).
 
 ## Impact
 

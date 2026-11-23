@@ -81,30 +81,9 @@ The oversized `pingTemp` reaches `strcpy(v5, Var)`. A benign long value is
 expected to crash the ping thread/web server; controlled data may reach the
 saved return address.
 
-## Evidence
+## Verification
 
-Static IDA decompilation of `net_WebPingGetValue` and `MagicPingThread`,
-handler-table mapping, the shipped `ping.asp` form, and hashes are under
-the parent project:
-
-`experiments/vulnerability-triage/results/20261107-moxa-tn5916-pingtemp-bof-01/evidence/`
-
-(`static-magicping-handler.txt`, `static-ping-strings-xrefs.txt`,
-`static-handler-table.txt`, `vendor-ping.asp`, `hashes.txt`).
-
-The v3.3 confirmation is in a separate run:
-`experiments/vulnerability-triage/results/20261108-moxa-v33-pingtemp-bof-01/`
-(`static-moxa33-ping-decompile.txt`,
-`static-moxa33-magicping-disasm.txt`,
-`static-moxa33-handler-disasm.txt`, `handler-pointer.txt`,
-`vendor-ping-v33.asp`, `hashes.txt`). The handler table at
-`0x120174770` contains `0x12002d34c`; the thread function at
-`0x12002ceb8` copies `pingTemp` into the 128-byte stack buffer.
-
-Dynamic qemu-mips64 validation was blocked: the extracted MIPS64 rootfs
-loader did not start under `qemu-mips64-static` 6.2 (even `busybox`/the
-loader exited without output after replacing the CramFS text symlink with
-a real `ld.so.1` symlink). The finding is therefore static.
+The vulnerable handler in the stock `magicP/WebServer/webs, /goform/net_WebPingGetValue` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

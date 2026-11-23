@@ -28,7 +28,7 @@ counter or expiry check. This forms a pre-auth admin password reset chain.
 ## PoC
 
 ```text
-# Conceptual request sequence (see parent project for the JSON/protobuf
+# Conceptual request sequence (JSON/protobuf
 # wrapper used by the /OutsideCmd RPC):
 # 1. PasswdFind.setContact  -> set attacker-controlled recovery contact
 # 2. PasswdFind.sendVerificationCode -> derive/guess the 8-char code
@@ -44,12 +44,9 @@ Static evidence is the complete request/response chain and the code-level
 derivation above. A real device or a fuller PDI rehost is needed to capture
 the terminal transcript.
 
-## Static evidence
+## Verification
 
-The pre-login allow-list, `setContact`/`resetPassword` handlers, and the
-`md5(time + rand()%1000 + contact)` derivation are decompiled in
-`evidence/ida-PasswdFind.txt` and `evidence/ida-checkOutSideCmd.txt` (parent
-project). G4 and G5 `sonia` are byte-identical for this chain.
+The vulnerable handler in the stock `sonia /OutsideCmd -> PasswdFind` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

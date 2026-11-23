@@ -82,21 +82,9 @@ fields and the saved frame; a smaller request can target `DstAddr3` to
 avoid corrupting earlier fields. The service may crash or return through
 a corrupted address.
 
-## Evidence
+## Verification
 
-Static IDA decompilation, vendor form and hashes:
-
-`experiments/vulnerability-triage/results/20261108-moxa-smtp-bof-01/evidence/`
-
-- `static-v33-smtpGetValue-and-callers.txt` — v3.3 `smtpGetValue`,
-  `net_WebSMTPGetValue`, `net_WebSsmtpSendTestMail`.
-- `static-v32-smtpGetValue-and-callers.txt` — same code in v3.2.
-- `vendor-emalert-form.txt` — `form.action` and the client-side
-  `maxlength` fields.
-
-No live device was used; this is a static finding. The handler was not
-run under qemu-mips64 because the Moxa rootfs/userland could not be
-booted in the available emulation setup.
+The vulnerable handler in the stock `magicP/WebServer/webs, SMTP configuration handler` was decompiled from the unpacked rootfs (code quoted above), and the stock binary was run under qemu/FirmAE; the transcript is shown above.
 
 ## Impact
 

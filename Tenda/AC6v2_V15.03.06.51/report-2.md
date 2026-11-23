@@ -74,9 +74,6 @@ formDefineTendDa:
   websFormDefine("WriteFacMac", formWriteFacMac);
 ```
 
-Full decompilation is retained in the parent project under
-`scratch/tenda-ac6v2-v15.03.06.51/ida/`.
-
 ## Impact
 
 Authenticated admin (or CSRF) root command execution. `cfm` is a root service;

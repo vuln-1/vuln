@@ -1,4 +1,4 @@
-# G1V3.1si was discovered to contain a hardcoded password vulnerability
+# Tenda G1V3.1si V16.01.7.8 was discovered to contain a hardcoded password vulnerability
 
 ## Overview
 Product: G1V3.1si
@@ -19,6 +19,21 @@ Tenda G1V3.1si V16.01.7.8 was discovered to contain a hardcoded password vulnera
 
 ## Additional Information
 ```markdown
+### Vendor
+Tenda
+
+### Product
+G1V3.1si
+
+### Version or Commit
+V16.01.7.8
+
+### Vulnerability Class
+CWE-798 Use of Hard-coded Credentials
+
+### Description
+Tenda G1V3.1si V16.01.7.8 ships a hardcoded root password in /etc_ro/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
+
 ### Product_version
 G1V3.1si
 
@@ -30,13 +45,11 @@ V16.01.7.8
 ### Attack_vector
 The root password obtained from /etc_ro/shadow, can be used for unauthorized root login.
 
-### Discription
+### Technical_details
 Tenda G1V3.1si V16.01.7.8 Firmware V16.01.7.8 was discovered to contain a hardcoded password vulnerability in /etc_ro/shadow, which allows attackers to log in as root
 
 ### Reference
 - https://www.tendacn.com/
 - https://github.com/vuln-1/vuln/blob/main/Tenda/G1V3.1si_V16.01.7.8/report-1.md
 
-
 ```
-

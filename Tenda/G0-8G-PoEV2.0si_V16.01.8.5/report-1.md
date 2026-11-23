@@ -1,4 +1,4 @@
-# G0-8G-PoEV2.0si was discovered to contain a hardcoded password vulnerability
+# Tenda G0-8G-PoEV2.0si V16.01.8.5 was discovered to contain a hardcoded password vulnerability
 
 ## Overview
 Product: G0-8G-PoEV2.0si
@@ -19,6 +19,21 @@ Tenda G0-8G-PoEV2.0si V16.01.8.5 was discovered to contain a hardcoded password 
 
 ## Additional Information
 ```markdown
+### Vendor
+Tenda
+
+### Product
+G0-8G-PoEV2.0si
+
+### Version or Commit
+V16.01.8.5
+
+### Vulnerability Class
+CWE-798 Use of Hard-coded Credentials
+
+### Description
+Tenda G0-8G-PoEV2.0si V16.01.8.5 ships a hardcoded root password in /etc_ro/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
+
 ### Product_version
 G0-8G-PoEV2.0si
 
@@ -30,13 +45,11 @@ V16.01.8.5
 ### Attack_vector
 The root password obtained from /etc_ro/shadow, can be used for unauthorized root login.
 
-### Discription
+### Technical_details
 Tenda G0-8G-PoEV2.0si V16.01.8.5 Firmware V16.01.8.5 was discovered to contain a hardcoded password vulnerability in /etc_ro/shadow, which allows attackers to log in as root
 
 ### Reference
 - https://www.tendacn.com/
 - https://github.com/vuln-1/vuln/blob/main/Tenda/G0-8G-PoEV2.0si_V16.01.8.5/report-1.md
 
-
 ```
-

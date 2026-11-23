@@ -1,4 +1,4 @@
-# 4G05V1.0re was discovered to contain a hardcoded password vulnerability
+# Tenda 4G05V1.0re V04.05.01.15 was discovered to contain a hardcoded password vulnerability
 
 ## Overview
 Product: 4G05V1.0re
@@ -19,6 +19,21 @@ Tenda 4G05V1.0re V04.05.01.15 was discovered to contain a hardcoded password vul
 
 ## Additional Information
 ```markdown
+### Vendor
+Tenda
+
+### Product
+4G05V1.0re
+
+### Version or Commit
+V04.05.01.15
+
+### Vulnerability Class
+CWE-798 Use of Hard-coded Credentials
+
+### Description
+Tenda 4G05V1.0re V04.05.01.15 ships a hardcoded root password in /etc/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
+
 ### Product_version
 4G05V1.0re
 
@@ -30,13 +45,11 @@ V04.05.01.15
 ### Attack_vector
 The root password obtained from /etc/shadow, can be used for unauthorized root login.
 
-### Discription
+### Technical_details
 Tenda 4G05V1.0re V04.05.01.15 Firmware V04.05.01.15 was discovered to contain a hardcoded password vulnerability in /etc/shadow, which allows attackers to log in as root
 
 ### Reference
 - https://www.tendacn.com/
 - https://github.com/vuln-1/vuln/blob/main/Tenda/4G05V1.0re_V04.05.01.15/report-1.md
 
-
 ```
-

@@ -1,4 +1,4 @@
-# Tenda i24v3.0 V3.0.0.8(4008) was discovered to contain a hardcoded vulnerability
+# Tenda i24v3.0 V3.0.0.8(4008) was discovered to contain a hardcoded password vulnerability
 
 ## Overview
 Product: Tenda i24v3.0 V3.0.0.8(4008)
@@ -21,6 +21,21 @@ Tenda i24v3.0 V3.0.0.8(4008) was discovered to contain a hardcoded password vuln
 
 ## Additional Information
 ```markdown
+### Vendor
+Tenda
+
+### Product
+i24v3.0
+
+### Version or Commit
+V3.0.0.8(4008)
+
+### Vulnerability Class
+CWE-798 Use of Hard-coded Credentials
+
+### Description
+Tenda i24v3.0 V3.0.0.8(4008) ships a hardcoded root password in etc_ro/shadow. An attacker who obtains the firmware image can recover the password and log in as root.
+
 ### Product_version
 Tenda i24v3.0
 
@@ -32,7 +47,7 @@ etc_ro/shadow
 ### Attack_vector
 The root password obtained from etc_ro/shadow, can be used for unauthorized root login.
 
-### Discription
+### Technical_details
 Tenda i24v3.0 V3.0.0.8(4008) was discovered to contain a hardcoded password vulnerability in /etc/shadow, which allows attackers to log in as root
 
 ### Reference
@@ -40,4 +55,3 @@ Tenda i24v3.0 V3.0.0.8(4008) was discovered to contain a hardcoded password vuln
 - https://github.com/vuln-1/vuln/blob/main/Tenda/i24v3.0_V3.0.0.8/report-1.md
 
 ```
-
